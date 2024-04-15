@@ -142,6 +142,7 @@ impl<'a> TryFrom<Projection<'a>> for Expr {
             )),
             SelectItem::QualifiedWildcard(v) => Ok(col(&v.to_string())),
             SelectItem::Wildcard => Ok(col("*")),
+            SelectItem::CSSSelector => Ok(col("balalal")),
             item => Err(anyhow!("projection {} not supported", item)),
         }
     }
